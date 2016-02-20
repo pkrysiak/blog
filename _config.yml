@@ -1,0 +1,38 @@
+# Site settings
+title: Paweł Krysiak
+description: 'Software neurosurgeon, developer, fan of african dances.'
+url: 'http://pkrysiak.github.io/blog'
+baseurl: '/blog/'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+
+author:
+  name: 'Paweł Krysiak'
+  email: pawelkrysiak90@gmail.com
+  twitter_username: krysiak_pawel
+  github_username:  pawel-krysiak
+  linkedin_username:  paweł-krysiak-12a57276
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+gems: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
