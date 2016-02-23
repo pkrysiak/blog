@@ -1,25 +1,37 @@
 ---
-title:  "Welcome to Jekyll!"
-date:   2016-01-08 15:04:23
-categories: [jekyll]
-tags: [jekyll]
+title:  "Yaml is SLOW !"
+date:   2016-02-23 14:00
+categories: [yaml, serialization]
+tags: [yaml, serialization, yajl, oj, marshal, json]
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve --watch`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+It is very common tendention in ruby world to use Yaml. Probably every ruby/rails programmer already used it in one of the projects. Either to modify `config.yml`, or maybe to make some translations for various languages using `I18n` gem.
+Nothing weird... Rails speaks Yaml natively, you don't have to include any fancy gems or follow any other convention, the format is very readable. Everything works more or less beautifull till the time when:
 
-Jekyll also offers powerful support for code snippets:
+### You decide to use it as [serialization](https://en.wikipedia.org/wiki/Serialization) mechanizm. ###
+{: style="color:gray; text-align: center; padding-bottom: 20px"}
+
+We all know that ruby performance sucks a little bit. But by choosing mechanisms that put so much overhead on the performance we will fail even more one day.
+
+Currently I'm working in one project that had quite interesting problem with [Delayed Job](https://github.com/collectiveidea/delayed_job) that uses Yaml as serializer.
+Searching for the problem and digging around i found out that serialization process takes a lot of time.
+But... that is the story related to this post that i will tell you another time.
+
+For the purpose of choosing the most efficient [serialization](https://en.wikipedia.org/wiki/Serialization) mechanisms and inspired by the solutions that i found already in the network, i wrote simple comparator
+that will give you idea how much processing power it consumes when doing very simple task.
+
+You can see it here: [ruby serialization comparator](https://github.com/pawel-krysiak/ruby-serialization-comparator)
+
+The results of the test looks like this:
 
 ``` ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+Serialization speed test:
+YAML:    43.5923869609833 sec
+JSON:    6.46457982063293 sec
+OJ Json: 2.97412514686584 sec
+Yail:    8.06042385101318 sec
+Marshal: 3.18873286247253 sec
 ```
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
-
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+The conclusions that i got from this experiment are: `Yaml` can be good as notation for the various config files. It follows similar intendation ideology as `ruby/python`, and that makes it very readable, but there is a lot to be impoved in matters of it's performance,
+therefore please make sure that you think twice before you will use it for the similar job.
