@@ -5,10 +5,10 @@ categories: [yaml, serialization]
 tags: [yaml, serialization, yajl, oj, marshal, json]
 ---
 
-It is very common tendention in ruby world to use Yaml. Probably every ruby/rails programmer already used it in one of the projects. Either to modify `config.yml`, or maybe to make some translations for various languages using `I18n` gem.
-Nothing weird... Rails speaks Yaml natively, you don't have to include any fancy gems or follow any other convention, the format is very readable. Everything works more or less beautifull till the time when:
+It is very common tendency in ruby world to use Yaml. Probably every ruby/rails programmer already used it in one of the projects. Either to modify `config.yml`, or maybe to make some translations for various languages using `I18n` gem.
+Nothing weird... Rails speaks Yaml natively, you don't have to include any fancy gems or follow any other convention, the format is very readable. Everything works more or less beautiful till the time when:
 
-### You decide to use it as [serialization](https://en.wikipedia.org/wiki/Serialization) mechanizm. ###
+### You decide to use it as [serialization](https://en.wikipedia.org/wiki/Serialization) mechanism. ###
 {: style="color:gray; text-align: center; padding-bottom: 20px"}
 
 We all know that ruby performance sucks a little bit. But by choosing mechanisms that put so much overhead on the performance we will fail even more one day.
@@ -33,5 +33,5 @@ Yail:    8.06042385101318 sec
 Marshal: 3.18873286247253 sec
 ```
 
-The conclusions that i got from this experiment are: `Yaml` can be good as notation for the various config files. It follows similar intendation ideology as `ruby/python`, and that makes it very readable, but there is a lot to be impoved in matters of it's performance,
+The conclusions that i got from this experiment are: `Yaml` can be good as notation for the various config files. It follows similar indentation ideology as `ruby/python`, and that makes it very readable, but there is a lot to be improved in matters of it's performance,
 therefore please make sure that you think twice before you will use it for the similar job.
