@@ -8,9 +8,8 @@ tags: [python, pil, photography, image editing]
 
 So... Imagine that you have this product photoshoot to do, and you have lots of products (let's say 35 materials with different patterns ) to shoot. You set up your cozy studio environment, lights tripods, choose the
 perfect camera settings to bring the best out of each photo. You want to catch 3 angles of each product, so you get over 100 photos of products in the end. You clean up your studio
-plug the camera into the computer and... ugh! so much to edit! But `Adobe Lightroom` that comes with a great help! You quickly select photos that you
+plug the camera into the computer and... ugh! so much to edit! But popular image editing software can come with a great help here! You quickly select photos that you
 like the most, then edit it to look sweet and juicy, apply the same settings to all the other photos and bam! You just got yourself pretty nice product photoshoot!
-
 
 You create new album on facebook, upload all of them, and then it hits you:
 
@@ -21,8 +20,8 @@ You create new album on facebook, upload all of them, and then it hits you:
 
 ``` - "We have 3 of those patterns! which one do you want precisely?" ```
 
-You already start to imagine a full day of answering this kind of questions, not counting the delivery mistakes that may happen on the way. You go back to `Lightroom` and start to dig in the settings.
-Uncle google starts to give you some hints on "How to watermark photos in Lightroom". Another 30 minutes passed, but! There is a way! It can put the watermark sequence on your photo! Yay!
+You already start to imagine a full day of answering this kind of questions, not counting the delivery mistakes that may happen on the way. You go back to the program and start to dig in the settings.
+Uncle google starts to give you some hints on "How to watermark photos in [your-image-editing-software-name]". Another 30 minutes passed, but! There is a way! It can put the watermark sequence on your photo! Yay!
 
 ### Oh but wait a minute! ###
 {: style="color:gray; text-align: center; padding-bottom: 20px"}
@@ -33,7 +32,7 @@ You can't just throw sequential numbers on each photo right? That would be confu
 
 So you renamed all the files so that they follow some logical naming pattern, and they are displayed in order:
 
-<img src="{{ "images/materials_list.png" | prepend: site.baseurl }}" style="width:98%" alt="My Profile Photo">
+<img src="{{ "images/materials_list.png" | prepend: site.baseurl }}" style="width:98%" alt="Materials List">
 
 And then... Well, then comes the bad part.. you need to go through each set of photos, place watermark on them and export the... and do it again... and again... and AGAIN!
 
@@ -105,4 +104,9 @@ processing finished.
 
 And the job is done! A very small piece of software helped to save lots of time! And will help to save more in the future!
 
-Since that time I extended it with some more cool features simplifying the process of grouping photos to watermark. If you are interested to take a look at it here is the [repository](https://github.com/pawel-krysiak/watermark-picture-python)
+Final effect after adding watermark in footer as well:
+
+<img src="{{ "images/material-1-2.jpg" | prepend: site.baseurl }}" style="width:98%" alt="Watermarked picture">
+
+Interested in reading more? Since that time I extended this small project with some more cool features that simplify the process of grouping photos to watermark.
+Make sure to check it out [here](https://github.com/pawel-krysiak/watermark-picture-python) !
